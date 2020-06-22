@@ -4,6 +4,10 @@
 #include <string>
 #include <vector>
 
+/**
+ * Prints the contents of the questions vector 
+ * Just used for testing 
+ */
 void print_vector(
     const std::vector<std::pair<std::string, std::string>>& questions) {
   for (const std::pair<std::string, std::string>& item : questions) {
@@ -11,6 +15,13 @@ void print_vector(
   }
 }
 
+/**
+ * Parses the csv file and places all of the questions and answers into a 
+ * vector of pairs of strings 
+ * @param file - a reference to an input file 
+ * 
+ * @return - a vector of pairs of strings of questions and answers
+ */
 std::vector<std::pair<std::string, std::string>> read_csv(std::ifstream& file) {
   std::vector<std::pair<std::string, std::string>> data;
 
