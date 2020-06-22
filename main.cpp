@@ -9,10 +9,7 @@
  * Just used for testing 
  */
 void print_vector(
-    const std::vector<std::pair<std::string, std::string>>& questions) {
-  for (const std::pair<std::string, std::string>& item : questions) {
-    std::cout << std::get<0>(item) << " : " << std::get<1>(item) << std::endl;
-  }
+    const std::vector<std::vector<std::string>>& questions) {
 }
 
 /**
@@ -22,8 +19,8 @@ void print_vector(
  * 
  * @return - a vector of pairs of strings of questions and answers
  */
-std::vector<std::pair<std::string, std::string>> read_csv(std::ifstream& file) {
-  std::vector<std::pair<std::string, std::string>> data;
+std::vector<std::vector<std::string>> read_csv(std::ifstream& file) {
+  std::vector<std::vector<std::string>> data;
 
   file.close();
   return data;
@@ -52,7 +49,7 @@ int main() {
     }
   }
 
-  std::vector<std::pair<std::string, std::string>> questions = read_csv(file);
+  std::vector<std::vector<std::string>> questions = read_csv(file);
   print_vector(questions);
 
   return 0;
