@@ -3,10 +3,11 @@
 #include <string>
 #include <vector>
 
-// a struct to contain the questions and answers 
+// a struct to contain the questions and answers
 struct Item {
   std::string question;
   std::string answer;
+  bool show_answer = false; 
 };
 
 /**
@@ -20,10 +21,10 @@ void print_vector(const std::vector<Item>& questions) {
 }
 
 /**
- * Parses the .study file and creates a vector of Items 
+ * Parses the .study file and creates a vector of Items
  * @param file - a reference to a input file stream
- * 
- * @return - a vector of Items 
+ *
+ * @return - a vector of Items
  */
 std::vector<Item> read_csv(std::ifstream& file) {
   std::vector<Item> data;
@@ -67,7 +68,24 @@ int main() {
   }
 
   std::vector<Item> questions = read_csv(file);
-  print_vector(questions);
+  const int item_count = questions.size();
+  int current = 0; 
+
+  while (true) {
+    std::cout << ">> ";
+    char input;
+    std::cin >> input;
+
+    switch (input) {
+      case 'q':
+        return 0;
+
+      default:
+        break;
+    }
+
+    input = 0;
+  }
 
   return 0;
 }
