@@ -118,15 +118,19 @@ int main() {
         case 'q':
           return 0;
 
+        case '?':
+          std::cout << "This should print the help" << std::endl;
+          break;
+
         default:
-          std::cout << "Try again. You can type 'h' for help" << std::endl;
+          std::cout << "Try again. You can type '?' for help" << std::endl;
           break;
       }
     } else {
-      std::cout << "Try again. You can type 'h' for help" << std::endl; 
+      std::cout << "Try again. You can type '?' for help" << std::endl;
     }
 
-    input.clear(); 
+    input.clear();
   }
 
   return 0;
