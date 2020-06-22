@@ -33,6 +33,12 @@ void clear_screen() {
   std::cout << intro << std::endl;
 }
 
+/**
+ * Trims whitespace and returns the new string
+ * @param str - the string to be trimmed 
+ * 
+ * @return - the trimmed string
+ */
 std::string trim(std::string str) {
   while (!str.empty() && std::isspace(str.back())) {
     str.pop_back();
@@ -43,16 +49,6 @@ std::string trim(std::string str) {
     ++pos;
   }
   return str.substr(pos);
-}
-
-/**
- * Prints the contents of the questions vector
- * Just used for testing
- */
-void print_vector(const std::vector<Item>& questions) {
-  for (const Item& item : questions) {
-    std::cout << item.question << "  " << item.answer << std::endl;
-  }
 }
 
 /**
