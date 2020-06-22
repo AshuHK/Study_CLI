@@ -149,6 +149,7 @@ int main() {
     std::cout << ">> ";
     std::string input;
     std::getline(std::cin, input);
+    input = trim(input);
 
     if (!input.empty()) {
       switch (input[0]) {
