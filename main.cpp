@@ -148,7 +148,6 @@ int main() {
         case 'h':
           break;
 
-        // show opposite side of the item
         case 'J':
         case 'j':
           if (questions[current].show_answer == false) {
@@ -159,7 +158,6 @@ int main() {
           show_item(questions, current);
           break;
 
-        // show opposite sode of the item
         case 'K':
         case 'k':
           if (questions[current].show_answer == false) {
