@@ -56,7 +56,7 @@ std::vector<Item> read_csv(std::ifstream& file) {
 }
 
 void show_item(const std::vector<Item>& questions, const int& current) {
-  clear_screen(); 
+  clear_screen();
   if (questions[current].show_answer == false) {
     std::cout << questions[current].question << std::endl;
   } else {
@@ -93,7 +93,6 @@ int main() {
 
   show_item(questions, current);
   while (true) {
-
     std::cout << ">> ";
     std::string input;
     std::getline(std::cin, input);
