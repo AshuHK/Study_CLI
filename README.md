@@ -1,2 +1,2 @@
 # Study_CLI
- A command line based flashcards application
+ A command line based flashcard application
