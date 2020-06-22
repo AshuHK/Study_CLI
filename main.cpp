@@ -7,17 +7,17 @@
 struct Item {
   std::string question;
   std::string answer;
-  bool show_answer = false; 
+  bool show_answer = false;
 };
 
 /**
- * Clears the screen and prints the splash text 
+ * Clears the screen and prints the splash text
  * @param None
- * 
+ *
  * @return - None
  */
 void clear_screen() {
-  std::cout << std::string(100, '\n'); 
+  std::cout << std::string(100, '\n');
   // make splash text
 }
 
@@ -55,11 +55,11 @@ std::vector<Item> read_csv(std::ifstream& file) {
   return data;
 }
 
-void show_item(const std::vector<Item>& questions, const int& current){
+void show_item(const std::vector<Item>& questions, const int& current) {
   if (questions[current].show_answer == false) {
-    std::cout << questions[current].question << std::endl; 
+    std::cout << questions[current].question << std::endl;
   } else {
-    std::cout << questions[current].answer << std::endl; 
+    std::cout << questions[current].answer << std::endl;
   }
 }
 
@@ -88,22 +88,31 @@ int main() {
 
   std::vector<Item> questions = read_csv(file);
   const int item_count = questions.size();
-  int current = 0; 
+  int current = 0;
 
   while (true) {
+    show_item(questions, current);
+
     std::cout << ">> ";
     char input;
     std::cin >> input;
 
     switch (input) {
+      // go back one item
+      case 'h':
+        break;
 
-      // case for left 
+      // show opposite side of the item
+      case 'j':
+        break;
 
-      // case for right 
+      // show opposite sode of the item
+      case 'k':
+        break;
 
-      // case for up 
-
-      // case for down
+      // go forward one item
+      case 'l':
+        break;
 
       case 'q':
         return 0;
