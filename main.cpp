@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 
+// a struct to contain the questions and answers 
 struct Item {
   std::string question;
   std::string answer;
@@ -18,6 +19,12 @@ void print_vector(const std::vector<Item>& questions) {
   }
 }
 
+/**
+ * Parses the .study file and creates a vector of Items 
+ * @param file - a reference to a input file stream
+ * 
+ * @return - a vector of Items 
+ */
 std::vector<Item> read_csv(std::ifstream& file) {
   std::vector<Item> data;
 
