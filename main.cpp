@@ -1,18 +1,22 @@
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
-#include <sstream> 
 
 void print_vector(
-    const std::vector<std::pair<std::string, std::string>>& questions) {}
+    const std::vector<std::pair<std::string, std::string>>& questions) {
+
+      for(const std::pair<std::string, std::string> & item : questions) {
+        std::cout << std::get<0>(item) << " : " << std::get<1>(item) << std::endl; 
+      }
+    }
 
 std::vector<std::pair<std::string, std::string>> read_csv(std::ifstream& file) {
-  std::vector<std::pair<std::string, std::string>> data; 
-  
+  std::vector<std::pair<std::string, std::string>> data;
 
-  file.close(); 
-  return data; 
+  file.close();
+  return data;
 }
 
 int main() {
@@ -39,6 +43,8 @@ int main() {
   }
 
   std::vector<std::pair<std::string, std::string>> questions = read_csv(file);
+
+  print_vector(questions); 
 
   return 0;
 }
