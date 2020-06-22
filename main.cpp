@@ -18,7 +18,19 @@ struct Item {
  */
 void clear_screen() {
   std::cout << std::string(100, '\n');
-  // make splash text
+
+  std::string intro = R"(
+ ________  _________  ___  ___  ________      ___    ___      ________  ___       ___
+|\   ____\|\___   ___\\  \|\  \|\   ___ \    |\  \  /  /|    |\   ____\|\  \     |\  \
+\ \  \___|\|___ \  \_\ \  \\\  \ \  \_|\ \   \ \  \/  / /    \ \  \___|\ \  \    \ \  \
+ \ \_____  \   \ \  \ \ \  \\\  \ \  \ \\ \   \ \    / /      \ \  \    \ \  \    \ \  \
+  \|____|\  \   \ \  \ \ \  \\\  \ \  \_\\ \   \/  /  /        \ \  \____\ \  \____\ \  \
+    ____\_\  \   \ \__\ \ \_______\ \_______\__/  / /           \ \_______\ \_______\ \__\
+   |\_________\   \|__|  \|_______|\|_______|\___/ /             \|_______|\|_______|\|__|
+   \|_________|                             \|___|/
+
+  )";
+  std::cout << intro << std::endl;
 }
 
 /**
@@ -65,11 +77,10 @@ void show_item(const std::vector<Item>& questions, const int& current) {
 }
 
 int main() {
-  std::cout << "Welcome to Study CLI" << std::endl;
-  std::cout << "Your personal command line flashcards :)" << std::endl;
-
   std::ifstream file;
   while (true) {
+    clear_screen();
+
     std::cout << "Enter the file name: ";
     std::string file_name;
     std::getline(std::cin, file_name);
