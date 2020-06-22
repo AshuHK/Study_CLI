@@ -111,7 +111,6 @@ Keybindings:
   - Misc.
     - ? - help
     - q/Q - quit Study CLI
-
   )";
   std::cout << keybindings << std::endl;
 }
@@ -125,7 +124,7 @@ int main() {
     std::string file_name;
     std::getline(std::cin, file_name);
 
-    if (file_name == "quit" || file_name == "q") {
+    if (file_name == "q") {
       return 0;
     }
 
