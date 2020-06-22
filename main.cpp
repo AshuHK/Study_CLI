@@ -136,7 +136,7 @@ int main() {
     if (file.is_open()) {
       break;
     } else {
-      std::cout << "Try again." << std::endl;
+      std::cout << "File not found. Try again." << std::endl;
     }
   }
 
@@ -192,11 +192,11 @@ int main() {
           break;
 
         default:
-          std::cout << "Try again. You can type '?' for help" << std::endl;
+          std::cout << "Try again. You can type '?' for help." << std::endl;
           break;
       }
     } else {
-      std::cout << "Try again. You can type '?' for help" << std::endl;
+      std::cout << "Try again. You can type '?' for help." << std::endl;
     }
 
     input.clear();
