@@ -56,6 +56,7 @@ std::vector<Item> read_csv(std::ifstream& file) {
 }
 
 void show_item(const std::vector<Item>& questions, const int& current) {
+  clear_screen(); 
   if (questions[current].show_answer == false) {
     std::cout << questions[current].question << std::endl;
   } else {
@@ -90,8 +91,8 @@ int main() {
   const int item_count = questions.size();
   int current = 0;
 
+  show_item(questions, current);
   while (true) {
-    show_item(questions, current);
 
     std::cout << ">> ";
     std::string input;
@@ -105,10 +106,22 @@ int main() {
 
         // show opposite side of the item
         case 'j':
+          if (questions[current].show_answer == false) {
+            questions[current].show_answer = true;
+          } else {
+            questions[current].show_answer = false;
+          }
+          show_item(questions, current);
           break;
 
         // show opposite sode of the item
         case 'k':
+          if (questions[current].show_answer == false) {
+            questions[current].show_answer = true;
+          } else {
+            questions[current].show_answer = false;
+          }
+          show_item(questions, current);
           break;
 
         // go forward one item
