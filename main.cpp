@@ -7,6 +7,7 @@ int main() {
   std::cout << "Welcome to Study CLI" << std::endl;
   std::cout << "Your personal command line flashcards :)" << std::endl;
 
+  std::cout << "Enter the file name: "; 
   std::string file_name;
   std::getline(std::cin, file_name);
 
