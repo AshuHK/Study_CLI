@@ -35,8 +35,8 @@ void clear_screen() {
 
 /**
  * Trims whitespace and returns the new string
- * @param str - the string to be trimmed 
- * 
+ * @param str - the string to be trimmed
+ *
  * @return - the trimmed string
  */
 std::string trim(std::string str) {
@@ -76,12 +76,12 @@ std::vector<Item> read_csv(std::ifstream& file) {
 }
 
 /**
- * Outputs the item at the current index 
- * @param questions - a constant reference to a vector of Items 
+ * Outputs the item at the current index
+ * @param questions - a constant reference to a vector of Items
  * @param current - a constant reference to an int for the index in questions
  *                  to output
- * 
- * @return - None 
+ *
+ * @return - None
  */
 void show_item(const std::vector<Item>& questions, const int& current) {
   clear_screen();
@@ -93,9 +93,9 @@ void show_item(const std::vector<Item>& questions, const int& current) {
 }
 
 /**
- * Outputs the keybindings 
- * @param None 
- * 
+ * Outputs the keybindings
+ * @param None
+ *
  * @return - None
  */
 void cout_help() {
