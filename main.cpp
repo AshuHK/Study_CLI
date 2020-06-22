@@ -79,7 +79,17 @@ void show_item(const std::vector<Item>& questions, const int& current) {
 void cout_help() {
   clear_screen();
   std::string keybindings = R"(
-    Keybindings and such. Just use the vim keys bro.
+Keybindings: 
+  - Main Controls 
+    - h/H - go back one card 
+    - j/J - flip the current card 
+    - k/K - flip the current card (also) 
+    - l/L - go forward one card
+  
+  - Misc. 
+    - ? - help 
+    - q/Q - quit Study CLI
+
   )";
   std::cout << keybindings << std::endl;
 }
@@ -119,10 +129,12 @@ int main() {
     if (!input.empty()) {
       switch (input[0]) {
         // go back one item
+        case 'H':
         case 'h':
           break;
 
         // show opposite side of the item
+        case 'J':
         case 'j':
           if (questions[current].show_answer == false) {
             questions[current].show_answer = true;
@@ -133,6 +145,7 @@ int main() {
           break;
 
         // show opposite sode of the item
+        case 'K':
         case 'k':
           if (questions[current].show_answer == false) {
             questions[current].show_answer = true;
@@ -143,9 +156,11 @@ int main() {
           break;
 
         // go forward one item
+        case 'L':
         case 'l':
           break;
 
+        case 'Q':
         case 'q':
           return 0;
 
