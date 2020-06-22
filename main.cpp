@@ -86,9 +86,9 @@ void cout_help() {
 
 int main() {
   std::ifstream file;
-  while (true) {
-    clear_screen();
+  clear_screen();
 
+  while (true) {
     std::cout << "Enter the file name: ";
     std::string file_name;
     std::getline(std::cin, file_name);
