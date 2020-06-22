@@ -94,34 +94,39 @@ int main() {
     show_item(questions, current);
 
     std::cout << ">> ";
-    char input;
-    std::cin >> input;
+    std::string input;
+    std::getline(std::cin, input);
 
-    switch (input) {
-      // go back one item
-      case 'h':
-        break;
+    if (!input.empty()) {
+      switch (input[0]) {
+        // go back one item
+        case 'h':
+          break;
 
-      // show opposite side of the item
-      case 'j':
-        break;
+        // show opposite side of the item
+        case 'j':
+          break;
 
-      // show opposite sode of the item
-      case 'k':
-        break;
+        // show opposite sode of the item
+        case 'k':
+          break;
 
-      // go forward one item
-      case 'l':
-        break;
+        // go forward one item
+        case 'l':
+          break;
 
-      case 'q':
-        return 0;
+        case 'q':
+          return 0;
 
-      default:
-        break;
+        default:
+          std::cout << "Try again. You can type 'h' for help" << std::endl;
+          break;
+      }
+    } else {
+      std::cout << "Try again. You can type 'h' for help" << std::endl; 
     }
 
-    input = 0;
+    input.clear(); 
   }
 
   return 0;
