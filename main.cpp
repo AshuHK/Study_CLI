@@ -33,6 +33,18 @@ void clear_screen() {
   std::cout << intro << std::endl;
 }
 
+std::string trim(std::string str) {
+  while (!str.empty() && std::isspace(str.back())) {
+    str.pop_back();
+  }
+
+  size_t pos = 0;
+  while (pos < str.size() && std::isspace(str[pos])) {
+    ++pos;
+  }
+  return str.substr(pos);
+}
+
 /**
  * Prints the contents of the questions vector
  * Just used for testing
@@ -103,11 +115,14 @@ int main() {
     std::string file_name;
     std::getline(std::cin, file_name);
 
-    file.open(file_name);
-
     if (file_name == "quit" || file_name == "q") {
       return 0;
     }
+
+    file_name = trim(file_name);
+    file_name += ".study";
+
+    file.open(file_name);
 
     if (file.is_open()) {
       break;
