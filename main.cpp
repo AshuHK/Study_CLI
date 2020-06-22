@@ -2,12 +2,17 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream> 
 
 void print_vector(
     const std::vector<std::pair<std::string, std::string>>& questions) {}
 
 std::vector<std::pair<std::string, std::string>> read_csv(std::ifstream& file) {
+  std::vector<std::pair<std::string, std::string>> data; 
+  
 
+  file.close(); 
+  return data; 
 }
 
 int main() {
