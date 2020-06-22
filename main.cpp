@@ -11,6 +11,17 @@ struct Item {
 };
 
 /**
+ * Clears the screen and prints the splash text 
+ * @param None
+ * 
+ * @return - None
+ */
+void clear_screen() {
+  std::cout << std::string(100, '\n'); 
+  // make splash text
+}
+
+/**
  * Prints the contents of the questions vector
  * Just used for testing
  */
@@ -42,6 +53,14 @@ std::vector<Item> read_csv(std::ifstream& file) {
 
   file.close();
   return data;
+}
+
+void show_item(const std::vector<Item>& questions, const int& current){
+  if (questions[current].show_answer == false) {
+    std::cout << questions[current].question << std::endl; 
+  } else {
+    std::cout << questions[current].answer << std::endl; 
+  }
 }
 
 int main() {
@@ -77,6 +96,15 @@ int main() {
     std::cin >> input;
 
     switch (input) {
+
+      // case for left 
+
+      // case for right 
+
+      // case for up 
+
+      // case for down
+
       case 'q':
         return 0;
 
