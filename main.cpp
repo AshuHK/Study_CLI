@@ -76,6 +76,14 @@ void show_item(const std::vector<Item>& questions, const int& current) {
   }
 }
 
+void cout_help() {
+  clear_screen();
+  std::string keybindings = R"(
+    Keybindings and such. Just use the vim keys bro.
+  )";
+  std::cout << keybindings << std::endl;
+}
+
 int main() {
   std::ifstream file;
   while (true) {
@@ -142,7 +150,7 @@ int main() {
           return 0;
 
         case '?':
-          std::cout << "This should print the help" << std::endl;
+          cout_help();
           break;
 
         default:
