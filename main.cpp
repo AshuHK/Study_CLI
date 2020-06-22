@@ -14,14 +14,14 @@ struct Item {
  */
 void print_vector(const std::vector<Item>& questions) {
   for (const Item& item : questions) {
-    std::cout << item.question << " : " << item.answer << std::endl;
+    std::cout << item.question << "  " << item.answer << std::endl;
   }
 }
 
 std::vector<Item> read_csv(std::ifstream& file) {
   std::vector<Item> data;
 
-  std::string line, temp;
+  std::string temp;
   while (std::getline(file, temp, '|')) {
     Item new_item;
     new_item.question = temp;
