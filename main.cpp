@@ -75,6 +75,14 @@ std::vector<Item> read_csv(std::ifstream& file) {
   return data;
 }
 
+/**
+ * Outputs the item at the current index 
+ * @param questions - a constant reference to a vector of Items 
+ * @param current - a constant reference to an int for the index in questions
+ *                  to output
+ * 
+ * @return - None 
+ */
 void show_item(const std::vector<Item>& questions, const int& current) {
   clear_screen();
   if (questions[current].show_answer == false) {
@@ -84,6 +92,12 @@ void show_item(const std::vector<Item>& questions, const int& current) {
   }
 }
 
+/**
+ * Outputs the keybindings 
+ * @param None 
+ * 
+ * @return - None
+ */
 void cout_help() {
   clear_screen();
   std::string keybindings = R"(
