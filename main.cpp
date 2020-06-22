@@ -4,27 +4,32 @@
 #include <string>
 #include <vector>
 
+struct Item {
+  std::string question;
+  std::string answer;
+};
+
 /**
- * Prints the contents of the questions vector 
- * Just used for testing 
+ * Prints the contents of the questions vector
+ * Just used for testing
  */
-void print_vector(
-    const std::vector<std::vector<std::string>>& questions) {
+void print_vector(const std::vector<Item>& questions) {
+  for (const Item& item : questions) {
+    std::cout << item.question << " : " << item.answer << std::endl; 
+  }
 }
 
-/**
- * Parses the csv file and places all of the questions and answers into a 
- * vector of pairs of strings 
- * @param file - a reference to an input file 
- * 
- * @return - a vector of pairs of strings of questions and answers
- */
-std::vector<std::vector<std::string>> read_csv(std::ifstream& file) {
-  std::vector<std::vector<std::string>> data;
+std::vector<Item> read_csv(std::ifstream& file) {
+  std::vector<Item> data;
 
-  std::string line; 
-  while(std::getline(file, line, '|')) {
-    data.push_back({line});
+  std::string line, temp; 
+  while(std::getline(file, temp, '|')) {
+    Item new_item; 
+    new_item.question = temp; 
+    std::getline(file, temp, '\n'); 
+    new_item.answer = temp; 
+
+    data.push_back(new_item); 
   }
 
   file.close();
@@ -54,7 +59,7 @@ int main() {
     }
   }
 
-  std::vector<std::vector<std::string>> questions = read_csv(file);
+  std::vector<Item> questions = read_csv(file);
   print_vector(questions);
 
   return 0;
