@@ -101,15 +101,15 @@ void show_item(const std::vector<Item>& questions, const int& current) {
 void cout_help() {
   clear_screen();
   std::string keybindings = R"(
-Keybindings: 
-  - Main Controls 
-    - h/H - go back one card 
-    - j/J - flip the current card 
-    - k/K - flip the current card (also) 
+Keybindings:
+  - Main Controls
+    - h/H - go back one card
+    - j/J - flip the current card
+    - k/K - flip the current card (also)
     - l/L - go forward one card
-  
-  - Misc. 
-    - ? - help 
+
+  - Misc.
+    - ? - help
     - q/Q - quit Study CLI
 
   )";
