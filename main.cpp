@@ -67,10 +67,10 @@ std::vector<Item> read_csv(std::ifstream& file) {
   std::string temp;
   while (std::getline(file, temp, '|')) {
     Item new_item;
-    new_item.question = temp;
+    new_item.question = trim(temp);
 
     std::getline(file, temp, '\n');
-    new_item.answer = temp;
+    new_item.answer = trim(temp);
 
     data.push_back(new_item);
   }
