@@ -120,7 +120,7 @@ int main() {
   clear_screen();
 
   while (true) {
-    std::cout << "Enter the file name: ";
+    std::cout << "Enter the .study file name: ";
     std::string file_name;
     std::getline(std::cin, file_name);
 
@@ -141,7 +141,7 @@ int main() {
   }
 
   std::vector<Item> questions = read_csv(file);
-  const int item_count = questions.size();
+  const int last_index = questions.size() - 1;
   int current = 0;
 
   show_item(questions, current);
@@ -156,6 +156,11 @@ int main() {
         // go back one item
         case 'H':
         case 'h':
+          current--;
+          if (current < 0) {
+            current = last_index;
+          }
+          show_item(questions, current);
           break;
 
         case 'J':
@@ -181,6 +186,11 @@ int main() {
         // go forward one item
         case 'L':
         case 'l':
+          current++;
+          if (current > last_index) {
+            current = 0;
+          }
+          show_item(questions, current);
           break;
 
         case 'Q':
