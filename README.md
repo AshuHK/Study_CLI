@@ -26,3 +26,5 @@ make
   - Misc.
     - `?` - help
     - `q` or `Q` - quit Study CLI
+
+Note: See `formatting.study` to see how to format `.study` files
