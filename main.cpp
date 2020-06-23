@@ -153,7 +153,6 @@ int main() {
 
     if (!input.empty()) {
       switch (input[0]) {
-        // go back one item
         case 'H':
         case 'h':
           current--;
@@ -183,7 +182,6 @@ int main() {
           show_item(questions, current);
           break;
 
-        // go forward one item
         case 'L':
         case 'l':
           current++;
