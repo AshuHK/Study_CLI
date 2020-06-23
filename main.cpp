@@ -44,7 +44,7 @@ std::string trim(std::string str) {
     str.pop_back();
   }
 
-  size_t pos = 0;
+  std::size_t pos = 0;
   while (pos < str.size() && std::isspace(str[pos])) {
     ++pos;
   }
@@ -103,14 +103,14 @@ void cout_help() {
   std::string keybindings = R"(
 Keybindings:
   - Main Controls
-    - h/H - go back one card
-    - j/J - flip the current card
-    - k/K - flip the current card (also)
-    - l/L - go forward one card
+    - h or H - go back one card
+    - j or J - flip the current card
+    - k or K - flip the current card (also)
+    - l or L - go forward one card
 
   - Misc.
     - ? - help
-    - q/Q - quit Study CLI
+    - q or Q - quit Study CLI
   )";
   std::cout << keybindings << std::endl;
 }
