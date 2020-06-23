@@ -156,38 +156,30 @@ int main() {
         case 'H':
         case 'h':
           current--;
-          if (current < 0) {
-            current = last_index;
-          }
+          current < 0 ? current = last_index : false;
           show_item(questions, current);
           break;
 
         case 'J':
         case 'j':
-          if (questions[current].show_answer == false) {
-            questions[current].show_answer = true;
-          } else {
-            questions[current].show_answer = false;
-          }
+          questions[current].show_answer == false
+              ? questions[current].show_answer = true
+              : questions[current].show_answer = false;
           show_item(questions, current);
           break;
 
         case 'K':
         case 'k':
-          if (questions[current].show_answer == false) {
-            questions[current].show_answer = true;
-          } else {
-            questions[current].show_answer = false;
-          }
+          questions[current].show_answer == false
+              ? questions[current].show_answer = true
+              : questions[current].show_answer = false;
           show_item(questions, current);
           break;
 
         case 'L':
         case 'l':
           current++;
-          if (current > last_index) {
-            current = 0;
-          }
+          current > last_index ? current = 0 : false;
           show_item(questions, current);
           break;
 
