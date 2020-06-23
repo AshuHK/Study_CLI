@@ -155,6 +155,8 @@ int main() {
       switch (input[0]) {
         case 'H':
         case 'h':
+
+          // handles underflow of current
           current--;
           current < 0 ? current = last_index : false;
           show_item(questions, current);
@@ -162,6 +164,8 @@ int main() {
 
         case 'J':
         case 'j':
+
+          // flips the boolean for the current question
           questions[current].show_answer == false
               ? questions[current].show_answer = true
               : questions[current].show_answer = false;
@@ -170,6 +174,8 @@ int main() {
 
         case 'K':
         case 'k':
+
+          // flips the boolean for the current question
           questions[current].show_answer == false
               ? questions[current].show_answer = true
               : questions[current].show_answer = false;
@@ -178,6 +184,8 @@ int main() {
 
         case 'L':
         case 'l':
+
+          // handles overflow of current
           current++;
           current > last_index ? current = 0 : false;
           show_item(questions, current);
