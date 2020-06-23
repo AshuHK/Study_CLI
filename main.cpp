@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-// a struct to contain the questions and answers
+// a struct to contain the questions, answers, and a boolean flag
 struct Item {
   std::string question;
   std::string answer;
