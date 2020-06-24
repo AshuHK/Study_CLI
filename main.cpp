@@ -118,7 +118,7 @@ Keybindings:
   std::cout << keybindings << std::endl;
 }
 
-int main() {
+std::ifstream get_file() {
   std::ifstream file;
   clear_screen();
 
@@ -128,7 +128,7 @@ int main() {
     std::getline(std::cin, file_name);
 
     if (file_name == "q") {
-      return 0;
+      exit(EXIT_SUCCESS);
     }
 
     file_name = trim(file_name);
@@ -142,7 +142,11 @@ int main() {
       std::cout << "File not found. Try again." << std::endl;
     }
   }
+  return file; 
+}
 
+int main() {
+  std::ifstream file = get_file(); 
   std::vector<Item> questions = read_csv(file);
 
   // create a time based seed for shuffling questions
