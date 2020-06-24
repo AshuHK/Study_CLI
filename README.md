@@ -8,6 +8,7 @@ git clone https://github.com/AshuHK/Study_CLI.git
 cd Study_CLI
 ```
 You can create a `.study` file by using whatever text editor you want (vim, emacs, nano, etc.). You will also have to compile it using the Makefile:
+
 ```bash
 # to compile
 make
