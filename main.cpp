@@ -54,6 +54,33 @@ std::string trim(std::string str) {
   return str.substr(pos);
 }
 
+std::ifstream get_file() {
+  std::ifstream file;
+  clear_screen();
+
+  while (true) {
+    std::cout << "Enter the .study file name: ";
+    std::string file_name;
+    std::getline(std::cin, file_name);
+
+    if (file_name == "q") {
+      exit(EXIT_SUCCESS);
+    }
+
+    file_name = trim(file_name);
+    file_name += ".study";
+
+    file.open(file_name);
+
+    if (file.is_open()) {
+      break;
+    } else {
+      std::cout << "File not found. Try again." << std::endl;
+    }
+  }
+  return file;
+}
+
 /**
  * Parses the .study file and creates a vector of Items
  * @param file - a reference to a input file stream
@@ -118,35 +145,8 @@ Keybindings:
   std::cout << keybindings << std::endl;
 }
 
-std::ifstream get_file() {
-  std::ifstream file;
-  clear_screen();
-
-  while (true) {
-    std::cout << "Enter the .study file name: ";
-    std::string file_name;
-    std::getline(std::cin, file_name);
-
-    if (file_name == "q") {
-      exit(EXIT_SUCCESS);
-    }
-
-    file_name = trim(file_name);
-    file_name += ".study";
-
-    file.open(file_name);
-
-    if (file.is_open()) {
-      break;
-    } else {
-      std::cout << "File not found. Try again." << std::endl;
-    }
-  }
-  return file; 
-}
-
 int main() {
-  std::ifstream file = get_file(); 
+  std::ifstream file = get_file();
   std::vector<Item> questions = read_csv(file);
 
   // create a time based seed for shuffling questions
