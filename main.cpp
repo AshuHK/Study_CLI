@@ -54,6 +54,12 @@ std::string trim(std::string str) {
   return str.substr(pos);
 }
 
+/**
+ * Gets the file from the user input
+ * @param None
+ *
+ * @return - an input file stream
+ */
 std::ifstream get_file() {
   std::ifstream file;
   clear_screen();
