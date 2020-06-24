@@ -2,6 +2,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm> 
+#include <random>
+#include <chrono>
 
 // a struct to contain the questions, answers, and a boolean flag
 struct Item {
@@ -141,6 +144,11 @@ int main() {
   }
 
   std::vector<Item> questions = read_csv(file);
+
+  // create a time based seed for shuffling questions
+  unsigned int seed = std::chrono::system_clock::now().time_since_epoch().count(); 
+  std::shuffle(std::begin(questions), std::end(questions), std::default_random_engine(seed)); 
+
   const int last_index = questions.size() - 1;
   int current = 0;
 
