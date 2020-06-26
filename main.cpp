@@ -156,8 +156,10 @@ int main() {
   std::vector<Item> questions = read_csv(file);
 
   // create a time based seed for shuffling questions
-  unsigned int seed =
+  unsigned long long seed =
       std::chrono::system_clock::now().time_since_epoch().count();
+  
+  // shuffle the questions based on the seed
   std::shuffle(std::begin(questions), std::end(questions),
                std::default_random_engine(seed));
 
