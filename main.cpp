@@ -160,8 +160,7 @@ int main() {
       std::chrono::system_clock::now().time_since_epoch().count();
   
   // shuffle the questions based on the seed
-  std::shuffle(std::begin(questions), std::end(questions),
-               std::default_random_engine(seed));
+  std::shuffle(std::begin(questions), std::end(questions),std::default_random_engine(seed));
 
   const int last_index = questions.size() - 1;
   int current = 0;
