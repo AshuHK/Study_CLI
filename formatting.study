@@ -1,4 +1,4 @@
-question | answer 
-	this is a tabbed question 		|	this is a tabbed answer			
-     this is a spaced question      |   this is a spaced answer      
-	    you can have any amount of trailing white space |   	as long as you have the delimiting character 		   
+question | answer
+	this is a tabbed question 		|	this is a tabbed answer
+     this is a spaced question      |   this is a spaced answer
+	    you can have any amount of trailing white space |   	as long as you have the delimiting character
