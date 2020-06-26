@@ -28,4 +28,4 @@ make
     - `?` - help
     - `q` or `Q` - quit Study CLI
 
-Note: In `.study` files, the delimiter character is `|`.
+Note: In `.study` files, the delimiter character is `|`. See `formatting.study` for more details on formatting.
