@@ -93,7 +93,7 @@ std::ifstream get_file() {
  *
  * @return - a vector of Items
  */
-std::vector<Item> read_csv(std::ifstream& file) {
+std::vector<Item> read_study_file(std::ifstream& file) {
   std::vector<Item> data;
 
   std::string temp;
@@ -153,7 +153,7 @@ Keybindings:
 
 int main() {
   std::ifstream file = get_file();
-  std::vector<Item> questions = read_csv(file);
+  std::vector<Item> questions = read_study_file(file);
 
   // create a time based seed for shuffling questions
   unsigned long long seed =
