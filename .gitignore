@@ -31,3 +31,8 @@
 *.out
 *.app
 study_cli
+
+# template files
+*.study
+!formatting.study
+!test.study
