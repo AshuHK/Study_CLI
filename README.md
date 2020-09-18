@@ -1,5 +1,5 @@
 # Study_CLI
-A command line based flashcard application using the vim keybindings. This provides the user with a minimal enviroment to study as well as a new simple way to store your flashcards.
+A command line based flashcard application using the WASD  keybindings. This provides the user with a minimal enviroment to study as well as a new simple way to store your flashcards.
 
 ## Installation and Setup
 To get this repo just clone it it wherever you want:

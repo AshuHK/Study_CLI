@@ -139,10 +139,10 @@ void cout_help() {
   std::string keybindings = R"(
 Keybindings:
   - Main Controls
-    - h or H - go back one card
-    - j or J - flip the current card
-    - k or K - flip the current card (also)
-    - l or L - go forward one card
+    - a or A - go back one card
+    - w or W - flip the current card
+    - s or S - flip the current card (also)
+    - d or D - go forward one card
 
   - Misc.
     - ? - help
@@ -175,8 +175,8 @@ int main() {
 
     if (!input.empty()) {
       switch (input[0]) {
-        case 'H':
-        case 'h':
+        case 'A':
+        case 'a':
 
           // handles underflow of current
           current--;
@@ -184,8 +184,8 @@ int main() {
           show_item(questions, current);
           break;
 
-        case 'J':
-        case 'j':
+        case 'S':
+        case 's':
 
           // flips the boolean for the current question
           questions[current].show_answer == false
@@ -194,8 +194,8 @@ int main() {
           show_item(questions, current);
           break;
 
-        case 'K':
-        case 'k':
+        case 'W':
+        case 'w':
 
           // flips the boolean for the current question
           questions[current].show_answer == false
@@ -204,8 +204,8 @@ int main() {
           show_item(questions, current);
           break;
 
-        case 'L':
-        case 'l':
+        case 'D':
+        case 'd':
 
           // handles overflow of current
           current++;
